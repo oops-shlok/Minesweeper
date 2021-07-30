@@ -95,7 +95,7 @@ public class GameView2 extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawColor(Color.BLACK);
-        canvas.drawText("POINTS: "+points,400,30,paintline);
+        canvas.drawText("POINTS: "+points,400,50,paintline);
         if (numColumns == 0 || numRows == 0) {
             return;
         }
