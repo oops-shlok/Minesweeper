@@ -34,19 +34,21 @@ public class GameView2 extends View {
         paintline.setColor(Color.WHITE);
         paint_1.setColor(Color.GREEN);
         paint_2.setColor(Color.RED);
+        paintline.setTextSize(50);
+        paintline.setStrokeWidth(6);
         dialog = new Dialog(context);
-        k = randBetween(0,7);
-        l = randBetween(0,7);
-        p = randBetween(0,7);
-        q = randBetween(0,7);
-        r = randBetween(0,7);
-        s = randBetween(0,7);
-        t = randBetween(0,7);
-        u = randBetween(0,7);
-        v = randBetween(0,7);
-        w = randBetween(0,7);
-        y = randBetween(0,7);
-        z = randBetween(0,7);
+        k = randBetween(1,7);
+        l = randBetween(1,7);
+        p = randBetween(1,7);
+        q = randBetween(1,7);
+        r = randBetween(1,7);
+        s = randBetween(1,7);
+        t = randBetween(1,7);
+        u = randBetween(1,7);
+        v = randBetween(1,7);
+        w = randBetween(1,7);
+        y = randBetween(1,7);
+        z = randBetween(1,7);
 
     }
 
@@ -93,7 +95,7 @@ public class GameView2 extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawColor(Color.BLACK);
-        canvas.drawText("POINTS: "+points,950,TEXT_SIZE,paintline);
+        canvas.drawText("POINTS: "+points,400,1500,paintline);
         if (numColumns == 0 || numRows == 0) {
             return;
         }
@@ -103,7 +105,7 @@ public class GameView2 extends View {
         int height = getHeight();
 
         for (int i = 0; i < numColumns; i++) {
-            for (int j = 0; j < numRows; j++) {
+            for (int j = 1; j < numRows-1; j++) {
                 if (cellChecked[i][j]) {
                     canvas.drawRect(i * cellWidth, j * cellHeight, (i + 1) * cellWidth, (j + 1) * cellHeight, paint_1);
                 }
@@ -141,7 +143,7 @@ public class GameView2 extends View {
         }
 
         for (int i = 1; i < numColumns; i++) {
-            canvas.drawLine(i * cellWidth, 0, i * cellWidth, height, paintline);
+            canvas.drawLine(i * cellWidth, 165, i * cellWidth, height-170, paintline);
         }
 
         for (int i = 1; i < numRows; i++) {
@@ -149,7 +151,7 @@ public class GameView2 extends View {
         }
     }
     private void openDialog() {
-        dialog.setContentView(R.layout.activity_gameover_dialog);
+        dialog.setContentView(R.layout.activity_main1);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         Button button=dialog.findViewById(R.id.button);
         button.setOnClickListener(new OnClickListener() {

@@ -24,12 +24,13 @@ public class GameView extends View {
     Dialog dialog;
     final Vibrator vibe = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
     int points=0;
-    float TEXT_SIZE = 60;
 
     public GameView(Context context){
         super(context);
         this.context = context;
         paintline.setColor(Color.WHITE);
+        paintline.setTextSize(50);
+        paintline.setStrokeWidth(6);
         paint_1.setColor(Color.GREEN);
         paint_2.setColor(Color.RED);
         dialog = new Dialog(context);
@@ -76,7 +77,7 @@ public class GameView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawColor(Color.BLACK);
-        canvas.drawText("POINTS: "+points,950,TEXT_SIZE,paintline);
+        canvas.drawText("POINTS: "+points,400,1500,paintline);
         if (numColumns == 0 || numRows == 0) {
             return;
         }
@@ -86,14 +87,14 @@ public class GameView extends View {
         int height = getHeight();
 
         for (int i = 0; i < numColumns; i++) {
-            for (int j = 0; j < numRows; j++) {
+            for (int j = 1; j < numRows-1; j++) {
                 if (cellChecked[i][j]) {
 
                     canvas.drawRect(i * cellWidth, j * cellHeight,
                             (i + 1) * cellWidth, (j + 1) * cellHeight,
                             paint_1);
-                }else if(cellChecked[0][0]){
-                    canvas.drawRect(0,0,cellWidth,cellHeight,paint_2);
+                }else if(cellChecked[0][8]){
+                    canvas.drawRect(0,8*cellHeight,cellWidth,9*cellHeight,paint_2);
                     vibe.vibrate(100);
                     openDialog();
 
@@ -145,7 +146,7 @@ public class GameView extends View {
         }
 
         for (int i = 1; i < numColumns; i++) {
-            canvas.drawLine(i * cellWidth, 0, i * cellWidth, height, paintline);
+            canvas.drawLine(i * cellWidth, 165, i * cellWidth, height-170, paintline);
         }
 
         for (int i = 1; i < numRows; i++) {
@@ -153,7 +154,7 @@ public class GameView extends View {
         }
     }
     private void openDialog() {
-        dialog.setContentView(R.layout.activity_gameover_dialog);
+        dialog.setContentView(R.layout.activity_main1);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         Button button=dialog.findViewById(R.id.button);
         button.setOnClickListener(new OnClickListener() {

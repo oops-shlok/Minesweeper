@@ -11,16 +11,15 @@
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="241dp"
+            android:layout_width="340dp"
+            android:layout_height="541dp"
             android:background="#000000">
-
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="130dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="116dp"
+                android:layout_marginTop="380dp"
                 android:text="MENU"
                 android:textColor="#000000"
                 app:backgroundTint="#f4f4f4"
@@ -47,17 +46,47 @@
                 android:id="@+id/textView2"
                 android:layout_width="299dp"
                 android:layout_height="96dp"
-                android:layout_marginTop="78dp"
-                android:layout_marginBottom="11dp"
+                android:layout_marginTop="72dp"
                 android:fontFamily="serif-monospace"
                 android:gravity="center"
                 android:text="You stepped on a mine! 💥"
                 android:textColor="#F4F4F4"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/button"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.509"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="207dp"
+                android:layout_height="61dp"
+                android:layout_marginTop="192dp"
+                android:fontFamily="serif-monospace"
+                android:gravity="center"
+                android:text=" "
+                android:textColor="#F4F4F4"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="210dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="296dp"
+                android:fontFamily="serif-monospace"
+                android:gravity="center"
+                android:text=" "
+                android:textColor="#F4F4F4"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
